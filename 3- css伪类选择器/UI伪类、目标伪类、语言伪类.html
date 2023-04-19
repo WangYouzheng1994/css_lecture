@@ -20,6 +20,16 @@
         input:focus {
             background-color: blue;
         }
+
+        .target {
+            width: 30px;
+            height: 300px;
+            background-color: #03e8e8;
+            margin: 3px;
+        }
+        div.target:target {
+            background-color: #f4fc00;
+        }
     </style>
 </head>
 <body>
@@ -31,13 +41,18 @@
     <label for="2">女</label>
     <input id="2" type="radio" name="r"/>
 </div>
-
 <div>
     <input disabled>
 </div>
-
 <div>
     <input>
 </div>
+<hr>
+<a href="#adiv">adiv</a>
+<a href="#bdiv">bdiv</a>
+<a href="#cdiv">cdiv</a>
+<div id="adiv" class="target">adiv</div>
+<div id="bdiv" class="target">bdiv</div>
+<div id="cdiv" class="target">cdiv</div>
 </body>
 </html>
