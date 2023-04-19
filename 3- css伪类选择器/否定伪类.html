@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div>p:not([title='你好'],:first-child,.fall) {
+            color: red
+        }
+
+/*        div > p:not(:first-child) {
+            color: green;
+        }*/
+
+    </style>
+</head>
+<body>
+<div>
+    <a>a1</a>
+    <p title="你好">p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
+    <a>a2</a>
+    <div>
+        <p >p1</p>
+        <p class="fall">p2</p>
+        <p>p3</p>
+        <p>p4</p>
+    </div>
+</div>
+
+</body>
+</html>
