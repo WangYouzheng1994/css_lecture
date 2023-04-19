@@ -164,3 +164,35 @@ div:only-child {
     color: darkblue;
 }
 ```
+
+3. 否定伪类
+* 排除括号中符合条件的元素
+```css
+
+/*div的直接后代的是p类型的，并且不是第一个孩子的元素*/
+div>p:not(:first-child) {
+    color: green;
+}
+
+/*div的直接后代，类型为p 并且除掉属性中title等于你好的、第一个孩子、class等于fall的*/
+div>p:not([title='你好'],:first-child,.fall) {
+    color: red
+}
+```
+
+5. UI伪类
+* :checked
+```css
+
+```
+* diaabled
+```css
+
+```
+* enable
+```css
+
+```
+
+6. 目标伪类
+7. 语言伪类
