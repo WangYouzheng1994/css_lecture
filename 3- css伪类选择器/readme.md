@@ -122,8 +122,45 @@ div p:first-of-type {
 div > p:first-of-type {
     color: cornflowerblue;
 }
-/*p类型的兄弟中第2个*/
+
+/*兄弟中第2个并且是p*/
 p:nth-of-type(2) {
     color: #03e8e8;
+}
+```
+
+* :empty 选中没有任何内容的
+
+```css
+/*选中div中没有任何元素的*/
+div:empty {
+    width: 400px
+}
+```
+
+* :root 选择根节点
+
+```css
+:root {
+    color: red
+}
+```
+
+* :only-of-type 没有相同类型的兄弟
+
+```css
+/*span类型，并且没有任何的span兄弟了*/
+span:only-of-type {
+    color: seagreen;
+}
+
+```
+
+* only-child 没有兄弟
+
+```css
+/*div 类型的元素，并且没有任何兄弟*/
+div:only-child {
+    color: darkblue;
 }
 ```

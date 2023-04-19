@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div > p {
+            color: #d06378;
+        }
+
+        p:nth-last-child(1) {
+            color: #00ff51;
+        }
+
+        div p:nth-last-child(2) {
+            color: #f4fc00;
+        }
+
+        div p:nth-last-of-type(2) {
+            color: #45cfff;
+        }
+
+        div:empty {
+            width: 400px
+        }
+        :root {
+            color: red
+        }
+        div:only-child {
+            color: darkblue;
+        }
+        span:only-of-type {
+            color: seagreen;
+        }
+
+    </style>
+</head>
+<body>
+<p>duli</p>
+<div>
+    <a>asdf</a>
+    <p>first</p>
+    <p>zs</p>
+    <p>ls</p>
+    <span>
+        <p>spanp1</p>
+        <p>spanp2</p>
+    </span>
+    <div>
+        <p>divp1</p>
+        <p>divp2</p>
+    </div>
+    <a>asdf</a>
+    <p>ww</p>
+    <span>
+        123
+        <p>就我自己1~</p>
+        <span>3333span独立</span>
+    </span>
+
+    <span>
+        <a>就我自己1aaaaaa</a>
+        <p>就我自己1~</p>
+    </span>
+
+    <span>
+        <span>就一个span</span>
+    </span>
+    <span>
+        <div>就一个div</div>
+    </span>
+
+    <div></div>
+    <div>    </div>
+    <div>    </div>
+</div>
+</body>
+</html>
