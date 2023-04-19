@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        input:checked {
+            width: 100px;
+            height: 100px;
+        }
+        input:disabled {
+            background-color: darkslategrey;
+        }
+
+        input:enabled {
+            background-color: #00ff51;
+        }
+
+        input:focus {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <label for="checkcheck">我是checkcheck</label>
+    <input id="checkcheck" type="checkbox">
+    <label for="1">男</label>
+    <input id="1" type="radio" name="r"/>
+    <label for="2">女</label>
+    <input id="2" type="radio" name="r"/>
+</div>
+
+<div>
+    <input disabled>
+</div>
+
+<div>
+    <input>
+</div>
+</body>
+</html>
