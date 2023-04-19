@@ -1,24 +1,33 @@
 ### 伪类和伪元素
+
 https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements
 
-- 伪元素其实相当于伪造了一个元素，并且给这个元素加了样式  
+- 伪元素其实相当于伪造了一个元素，并且给这个元素加了样式
+
 * 俩冒号`::`
+
 - 伪类是给元素某些状态的描述，伪类没有伪造元素，例如 first-child 只是给子元素添加样式而已，
+
 * 一个冒号`:`
 
 #### 伪类选择器
-1. 动态伪类 
+
+1. 动态伪类
+
 * 下面a标签的伪类的编写顺序切记不可打乱，否则会有问题
 * a标签特有 link 和 visited
+
 ```css
 /* 选中没有访问过的a元素 */
 a:link {
     color: blue;
 }
+
 /* 选中访问过的a元素 */
 a:visited {
     color: red;
 }
+
 /* 选中鼠标停留的a元素 */
 a:hover {
     color: yellow;
@@ -33,11 +42,88 @@ a:active {
 span:hover {
     color: green;
 }
+
 /*选中鼠标点击激活时候的span*/
 span:active {
     color: red;
 }
-
 ```
 
 2. 结构伪类
+
+* :first-child
+
+```css
+/*div的后代中，并且在所有兄弟元素中第一个而且是p的*/
+div p:first-child {
+    color: red;
+}
+
+/*div的直接后代中，并且在所有兄弟元素中第一个而且是p的*/
+div > p:first-child {
+    color: cornflowerblue;
+}
+
+/* 在所有兄弟元素中是第一个元素，而且是p的 */
+p:first-child {
+    color: yellow;
+}
+```
+
+* :last-child
+
+```css
+/*div后代中，在所有兄弟中，最后一个元素并且是p*/
+div > p:last-child {
+    color: cornflowerblue;
+}
+```
+
+* :nth-child()
+
+```css
+/*div后代中，在所有兄弟中第三个孩子，并且是p的*/
+div p:nth-child(3) {
+    color: red;
+}
+
+/*选择偶数*/
+p:nth-child(2n) {
+    color: blue
+}
+
+p:nth-child(even) {
+    color: blue;
+}
+
+/*奇数*/
+p:nth-child(2n+1) {
+    color: greenyellow;
+}
+
+p:nth-child(odd) {
+    color: greenyellow;
+}
+
+/*an+b 公式*/
+/*获取前五个*/
+p:nth-child(-n+5) {
+    color: darkviolet;
+}
+```
+
+```css
+/*获取div的后代中，p类型的兄弟中第一个*/
+div p:first-of-type {
+    color: red;
+}
+
+/*获取div的直接后代中，p类型的兄弟中第一个*/
+div > p:first-of-type {
+    color: cornflowerblue;
+}
+/*p类型的兄弟中第2个*/
+p:nth-of-type(2) {
+    color: #03e8e8;
+}
+```
