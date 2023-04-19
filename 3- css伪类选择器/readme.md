@@ -166,16 +166,18 @@ div:only-child {
 ```
 
 3. 否定伪类
+
 * 排除括号中符合条件的元素
+
 ```css
 
 /*div的直接后代的是p类型的，并且不是第一个孩子的元素*/
-div>p:not(:first-child) {
+div > p:not(:first-child) {
     color: green;
 }
 
 /*div的直接后代，类型为p 并且除掉属性中title等于你好的、第一个孩子、class等于fall的*/
-div>p:not([title='你好'],:first-child,.fall) {
+div > p:not([title='你好'],:first-child,.fall) {
     color: red
 }
 ```
@@ -183,16 +185,51 @@ div>p:not([title='你好'],:first-child,.fall) {
 5. UI伪类
 * :checked
 ```css
-
+/*勾选的input组件 radio、checkbox*/
+input:checked {
+    width: 100px;
+    height: 100px;
+}
 ```
-* diaabled
-```css
 
+* :disabled
+```css
+/*禁用的input组件*/
+input:disabled {
+    background-color: darkslategrey;
+}
 ```
-* enable
+* :enable
 ```css
-
+/*禁用的*/
+input:enabled {
+    background-color: #00ff51;
+}
+```
+* :focus
+```css
+/*选中的*/
+input:focus {
+    background-color: blue;
+}
 ```
 
 6. 目标伪类
+* :target 锚点跳转的目标
+```css
+/*div类型且class为target，当是锚点跳转的元素*/
+div.target:target {
+    background-color: #f4fc00;
+}
+```
+
 7. 语言伪类
+* :lang() ，通过html的lang属性区分的
+```html
+<div lang="zh-CN">中文</div>
+```
+```css
+ div:lang(zh-CN) {
+    color: red;
+}
+```

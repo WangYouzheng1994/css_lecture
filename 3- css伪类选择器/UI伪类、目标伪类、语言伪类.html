@@ -9,6 +9,7 @@
             width: 100px;
             height: 100px;
         }
+
         input:disabled {
             background-color: darkslategrey;
         }
@@ -27,8 +28,30 @@
             background-color: #03e8e8;
             margin: 3px;
         }
+
         div.target:target {
             background-color: #f4fc00;
+        }
+
+        /*    */
+        div:lang(zh-CN) {
+            color: red;
+        }
+
+        div:lang(zh-zh) {
+            color: yellowgreen;
+        }
+
+        div:lang("aaa") {
+            color: green;
+        }
+
+        :lang(aaa) {
+            color: blueviolet;
+        }
+
+        div:lang(en) {
+            color: darkblue;
         }
     </style>
 </head>
@@ -48,11 +71,25 @@
     <input>
 </div>
 <hr>
-<a href="#adiv">adiv</a>
-<a href="#bdiv">bdiv</a>
-<a href="#cdiv">cdiv</a>
-<div id="adiv" class="target">adiv</div>
-<div id="bdiv" class="target">bdiv</div>
-<div id="cdiv" class="target">cdiv</div>
+<div>
+    <a href="#adiv">adiv</a>
+    <a href="#bdiv">bdiv</a>
+    <a href="#cdiv">cdiv</a>
+    <div id="adiv" class="target">adiv</div>
+    <div id="bdiv" class="target">bdiv</div>
+    <div id="cdiv" class="target">cdiv</div>
+</div>
+
+<hr>
+
+<div>
+    <div lang="zh-CN">中文</div>
+    <div lang="zh-zh">中文zh-zh</div>
+    <div lang="aaa">123阿斯顿发</div>
+    <div>英文</div>
+
+
+</div>
+
 </body>
 </html>
