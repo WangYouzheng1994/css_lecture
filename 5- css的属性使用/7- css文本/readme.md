@@ -85,3 +85,42 @@ del的删除线
     text-align: right;
 }
 ```
+
+5. 行高
+
+> font-size 这个参数其实是调整的字体外围的那个看不见的盒子。 但是字体是可以超出那个盒子的，尤其是下边缘。
+> 文字本身是基于基线对齐的。 基线：英文x的下边缘
+* line-height 行高支持四种模式，是可以继承的
+
+```css
+div {
+    font-size: 40px;
+    /*数值表示*/
+    /*line-height: 40px;*/
+    /*line-height: normal;*/
+    /*相对于font-size的倍数*/
+    /*line-height: 1.5; 常用*/
+    /*相对于font-size的百分比倍数*/
+    line-height: 150%
+}
+
+```
+> height和line-height的关系：如果设置了height，那么lineheight不会影响盒子的高度，
+> 但是如果没有写height，那么高度就是行数+line-height
+
+6. 垂直对齐
+* vertical-align  
+用于指定同一行元素之间以及表格单元格内文字的垂直对齐方式，不能控制块元素
+- 可选参数
+  - baseline 默认值，与父元素的基线对齐
+  - top 顶部对齐
+  - middle 元素的中部对齐父元素的基线 + 父元素字母x一半的对齐
+  - bottom 底部对齐
+
+```css
+div {
+    /*vertical-align: middle;*/
+    /*vertical-align: top;*/
+    vertical-align: bottom;
+}
+```
