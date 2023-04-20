@@ -27,7 +27,7 @@
 ```css
 .overline {
     text-decoration: overline;
-    
+
 }
 
 .underline {
@@ -37,6 +37,7 @@
 .linethrough {
     text-decoration: line-through;
 }
+
 /*可以通过设置none 去掉超
 链接a标签的下划线
 ins上划线
@@ -46,7 +47,9 @@ del的删除线
     text-decoration: none;
 }
 ```
+
 - 复合案例，没有顺序要求
+
 ```css
 
 /*红色的上划波浪线*/
@@ -57,5 +60,28 @@ del的删除线
 /*绿色的下划虚线*/
 .underline {
     text-decoration: underline dotted green;
+}
+```
+
+3. 文本缩进
+
+* text-indent px为单位
+
+```css
+/* 缩进*/
+.indent {
+    text-indent: 40px;
+}
+```
+
+4. 文本对齐
+
+* text-align：支持left、center、right
+
+```css
+ /* 缩进40px，右对齐*/
+.indent {
+    text-indent: 40px;
+    text-align: right;
 }
 ```
