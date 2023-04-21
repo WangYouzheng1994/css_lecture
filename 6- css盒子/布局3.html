@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #outter {
+            background-color: gray;
+            height: 600px;
+            width: 400px;
+            /*解决inner设置margin top传递给outter的问题*/
+            overflow: hidden;
+            /*保持和height 就是单行文字的垂直居中*/
+            line-height: 600px;
+            /*文字的水平居中*/
+            text-align: center;
+            /*避免孩子节点中的文本被父节点的基线影响*/
+            font-size: 0;
+        }
+/*
+        span {
+            background-color: orange;
+            font-size: 20px;
+            vertical-align: middle;
+        }
+*/
+
+        img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<div id="outter">
+    <span id="inner">
+        出来嗨皮一下~
+    </span>
+    <img src="./img.png"/>
+</div>
+<img src="./img.png"/>
+</body>
+</html>
