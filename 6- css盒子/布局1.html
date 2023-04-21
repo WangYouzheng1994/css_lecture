@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #outter {
+            background-color: gray;
+            height: 600px;
+            width: 400px;
+            /*解决inner设置margin top传递给outter的问题*/
+            overflow: hidden;
+        }
+
+        #inner {
+            background-color: orange;
+            width: 200px;
+            height: 150px;
+            margin: 0 auto;
+            margin-top: 150px;
+            /*保持和height 就是单行文字的垂直居中*/
+            line-height: 150px;
+            /*文字的水平居中*/
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="outter">
+
+    <div id="inner">
+        你好啊
+    </div>
+</div>
+
+</body>
+</html>

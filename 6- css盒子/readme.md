@@ -104,6 +104,15 @@ div {
 * 在盒子的最外围区域
 * inline行内元素，不收margin top、margin bottom的影响。
 
+- 左右居中
+```css
+/* 上下是0  左右是auto，这样左右的margin就会一半一半*/
+div {
+    margin: 0 auto
+}
+
+```
+
 ### margin塌陷的问题和解决方案
 margin塌陷的原因，w3c当年就这么设计的。
 1. 嵌套的div，最上面的孩子div 设置了margin-top会变成父的margin-top效果
@@ -127,3 +136,20 @@ margin塌陷的原因，w3c当年就这么设计的。
 - hidden  超出部分 隐藏
 - scroll 无论是否溢出都会显示滚动条
 - auto  如果溢出就显示滚动条，否则不显示
+
+
+### 元素的隐藏
+* visibility 默认是show，设置为hidden就会隐藏，但是保留占位
+* display，设置为display:none, 不占位，没有大小宽高。
+
+### 元素样式的继承
+* 继承的样式，优先级是最低的
+### 元素默认样式
+1. 元素默认是有默认样式的：
+* `<a>`：下划线，字体颜色，指向的小手
+* `h1, h2, h3` 加粗，大小
+* `p` 上下外边距
+* `body` 默认8px外边距
+
+--- 
+### 布局
