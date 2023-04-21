@@ -108,6 +108,16 @@ div {
 > height和line-height的关系：如果设置了height，那么lineheight不会影响盒子的高度，
 > 但是如果没有写height，那么高度就是行数+line-height
 
+* line-height可以设置单行文字的垂直居中，方式是，和height保持一致
+```css
+div {
+  height: 100px;
+  /*保持和height一直的高度，就可以垂直居中啦*/
+  line-height: 100px;
+}
+
+```
+
 6. 垂直对齐
 * vertical-align  
 用于指定同一行元素之间以及表格单元格内文字的垂直对齐方式，不能控制块元素
