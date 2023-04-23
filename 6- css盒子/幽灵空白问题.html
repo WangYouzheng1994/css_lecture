@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div {
+            background-color: gray;
+            /* 方案3： 设置为font-size:0，相当于取消基线*/
+            font-size: 0;
+        }
+
+        img {
+            width: 200px;
+            /*方案1 设置孩子元素相对父元素的对齐方式*/
+            /*vertical-align: bottom;*/
+            /*    方案2 设置为块元素，有局限性*/
+            /*display: block;*/
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    x
+    <img src="img.png" alt="">
+</div>
+</body>
+</html>
