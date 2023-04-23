@@ -36,6 +36,12 @@ h2 {
     font-size: 60px;
 }
 
+/* 选择两个类的元素*/
+.green.big {
+    font-size: 90px;
+    color: red;
+}
+
 ```
 
 ```html
@@ -44,6 +50,8 @@ h2 {
 <h1 class="green big">我是第一个</h1>
 
 ```
+
+
 
 4. id选择器，一个元素只能有一个id
 
