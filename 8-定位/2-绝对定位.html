@@ -7,8 +7,10 @@
         .outter {
             width: 500px;
             height: 800px;
+            left: 15px;
             background-color: blue;
-
+            /*设置为relative可以让子元素的绝对定位以父元素为准~*/
+            position:relative;
             padding: 20px
         }
 
@@ -23,10 +25,10 @@
             height: 200px;
             background-color: green;
 
-            /*  设置：开启相对定位 如果不设置定位参数，啥事没有 */
-            position: relative;
+            /*  设置：开启绝对定位，会立刻脱离文档流，变成了"定位元素"  */
+            position: absolute;
             /*左右同时写，left生效，与谁先编码无关*/
-            right:150px;
+            /*right:150px;*/
             left: 200px;
         }
 
