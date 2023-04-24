@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--设置novalidate 那么所有的校验，比如默认的，还有requied parttern所涉及的规则都会取消-->
+<form action="" novalidate>
+<!--  自动填充autocomplete 提示placeholder  -->
+    <label>必填修饰：</label><input type="text" required/><br>
+
+    <label>正则修饰：</label><input type="text" pattern="^[0-9]*$" required/><br>
+
+    <label>url</label><input type="url"/><br>
+    <label>数字</label><input type="number"/><br>
+    <label>邮件</label><input type="email"/><br>
+    <label>搜索</label><input type="search"/><br>
+    <label>电话，影响到了客户端 弹出来就是拨号盘</label><input type="tel"/><br>
+    <label>范围</label><input type="range" max="100" min="5" value="99"/><br>
+    <label>拾色器</label><input type="color"/><br>
+    <label>日期--年月日</label><input type="date"/><br>
+    <label>日期--年月日时分</label><input type="datetime-local"/><br>
+    <label>月</label><input type="month"/><br>
+    <label>时分</label><input type="time"/><br>
+
+    <button type="submit">提交</button>
+</form>
+
+</body>
+</html>
