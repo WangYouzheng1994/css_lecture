@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outter {
+            height: 400px;
+            background-color: #888;
+            /*  配合子元素的absolute，relative  */
+            position: relative;
+        }
+
+        .inner {
+            background-color: orange;
+            font-size: 20px;
+            padding: 20px;
+            border: 10px solid black;
+            /*开启定位以后，宽和高是由内容撑开的*/
+            position: absolute;
+            margin:0px;
+            /*子元素会超出父元素，width设置的是content的宽和高，那超出的部分是，border和padding
+            width: 100%*/
+
+            /*  特殊应用1：填满父元素  */
+            /*左边贴死*/
+            left: 0;
+            /*右边也贴死*/
+            right: 0;
+            /*上下填满父元素*/
+            top: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="outter">
+    <div class="inner">
+
+    </div>
+</div>
+
+</body>
+</html>
