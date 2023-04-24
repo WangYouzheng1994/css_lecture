@@ -3,6 +3,7 @@
 * 元素开启定位后，元素层级就会更高。
 * 同时开启定位，后编码css的层级会更高。
 * 调整方向的四个参数
+
 ```css
 div {
     /*距离顶*/
@@ -25,8 +26,7 @@ div {
 * 相对的位置是他原来的位置。
 * 左右同时写，left生效，与谁先编码无关。
 * 可以开启浮动。
-
-相对定位的作用：
+* 不改变显示模式display 相对定位的作用：
 
 * 位置微调
 * 与绝对定位配合
@@ -75,6 +75,7 @@ div {
 ```
 
 4. 粘性定位
+
 * 不脱离文档流
 * 核心就是为了实现一个 滚动条滚动然后把元素粘住。以前都是用js实现的
 * 要粘谁 就给谁设置，什么时候不粘了？ 他所在的父容器下边缘脱离视口以后。
@@ -89,22 +90,111 @@ div {
 }
 
 ```
+
 * 他相对的是离他最近的一个可滚动的祖先元素。默认是视口，如果父容器是能滚动的比如overflow:auto，那么就不是视口了哈
+
 ```css
 .item2 {
     height: 300px;
     overflow: auto;
 }
 ```
+
 * 支持top，还有right，她完全是靠滚动条来的~
 * 支持浮动，不推荐
 * 支持margin，不推荐
 
-
 ### 定位的层级
+
 * 定位后 层级会上升。
 * 如果父元素设置了z-index，那么孩子元素的z-index 会受到父元素的z-index的影响
-### 定位的特殊应用
-* 浮动后，进行水平、垂直居中
-* 
-###     
+
+### 定位的特殊应用：绝对定位absolute和固定fixed定位
+
+* 浮动后，进行水平、垂直居中 方案1：
+
+```css
+.inner {
+    background-color: orange;
+    font-size: 20px;
+    padding: 20px;
+    border: 10px solid black;
+    /*开启定位以后，宽和高是由内容撑开的*/
+    position: absolute;
+    /*子元素会超出父元素，width设置的是content的宽和高，那超出的部分是，border和padding
+    width: 100%*/
+
+    /*  特殊应用1：填满父元素  */
+    /*左边贴死*/
+    left: 0;
+    /*右边也贴死*/
+    right: 0;
+    /*上下填满父元素*/
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+```
+
+方案2：
+
+```css
+.inner {
+    width: 400px;
+    height: 100px;
+    background-color: orange;
+    font-size: 20px;
+    padding: 20px;
+    border: 10px solid black;
+    /*开启定位以后，宽和高是由内容撑开的*/
+    position: absolute;
+    /*子元素会超出父元素，width设置的是content的宽和高，那超出的部分是，border和padding
+    width: 100%*/
+
+    /*  特殊应用2：水平垂直居中于父元素  */
+    /*左边贴死*/
+    left: 0;
+    /*右边也贴死*/
+    right: 0;
+    /*上下填满父元素*/
+    top: 0;
+    bottom: 0;
+    /*定位会计算margin，他会自动调整margin的大小*/
+    margin: auto;
+}
+```
+
+### 定位的特殊应用：让定位元素填充包含块的宽和高
+
+* 让宽度一致，设置left和right都为0
+* 让高度一致，设置top和bottom都为0
+
+```css
+.outter {
+    height: 400px;
+    background-color: #888;
+    /*  配合子元素的absolute，relative  */
+    position: relative;
+}
+
+.inner {
+    background-color: orange;
+    font-size: 20px;
+    padding: 20px;
+    border: 10px solid black;
+    /*开启定位以后，宽和高是由内容撑开的*/
+    position: absolute;
+    margin: 0px;
+    /*子元素会超出父元素，width设置的是content的宽和高，那超出的部分是，border和padding
+    width: 100%*/
+
+    /*  特殊应用1：填满父元素  */
+    /*左边贴死*/
+    left: 0;
+    /*右边也贴死*/
+    right: 0;
+    /*上下填满父元素*/
+    top: 0;
+    bottom: 0;
+}
+```
