@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outter {
+            height: 400px;
+            background-color: #888;
+            /*  配合子元素的absolute，relative  */
+            position: relative;
+        }
+
+        /*  特殊应用3：水平垂直居中于父元素，不推荐用margin配合，太麻烦  */
+        .inner {
+            width: 400px;
+            height: 100px;
+            background-color: orange;
+            font-size: 20px;
+            padding: 20px;
+            border: 10px solid black;
+            /*开启定位以后，宽和高是由内容撑开的*/
+            position: absolute;
+
+            /*左边贴死*/
+            left: 50%;
+            /*右边也贴死*/
+            /*right: 0;*/
+            /*上下填满父元素*/
+            top: 50%;
+            /*bottom: 0;*/
+            /*margin 推回宽度的一半(如果有pading和boder那么都要反推回去)，写margin-left的原因是上面有left，那么margin-left就好用了*/
+            margin-left: -220px;
+            /*margin 推回宽度的一半(如果有pading和boder那么都要反推回去)，写margin-top的原因是上面有top，那么margin-top就好用了*/
+            margin-top: -80px;
+        }
+    </style>
+</head>
+<body>
+<div class="outter">
+    <div class="inner">
+
+    </div>
+</div>
+
+</body>
+</html>
