@@ -103,3 +103,48 @@ div {
 ```
 
 ### CSS3-边框属性
+* border-radius 边框圆角
+```css
+div {
+    width: 400px;
+    height: 400px;
+    /*半径200px，radiu就是200px到头了，可以认为这就是半径*/
+    border-radius: 200px;
+    /*这样就是个椭圆*/
+    border-radius: 200px 100px;
+    /*左上角是个椭圆 x : 200px, y: 100px*/
+    border-top-left-radius: 200px 100px;
+    
+    /*复合属性： 顺时针*/
+    /*border-radius: 左上，右上，右下，左下;*/
+}
+```
+
+* outline-width 边框外框
+不参与计算盒子大小，在margin外面的一个框，不占位
+```css
+div {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    background-color: gray;
+    font-size: 40px;
+    margin: 0 auto;
+    margin-top: 100px;
+    
+    /*外框宽度*/
+    outline-width: 20px;
+    /*外框颜色*/
+    outline-color: orange;
+    /*外框线类型： 虚线doshed 实线solid*/
+    outline-style: solid;
+    /*外框线，偏移，支持正负值*/
+    outline-offset: 0px;
+
+    /*  复合属性 跨度，实线，颜色。 不支持偏移offset */
+    outline: 20px solid orange;
+}
+
+
+
+```
