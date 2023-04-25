@@ -241,7 +241,60 @@ h1 {
 }
 ```
 
-### 渐变
+### 渐变 
+可以实现立体的效果~
+* 线性渐变 linear-gradient
+```css
+div {
+    height: 400px;
+    weight: 400px;
+    border: 1px solid black;
+    /*从上到下 红黄绿*/
+    background-image: linear-gradient(red, yellow, green);
+    /*设置渐变方向为： 从左下到右上，红黄绿*/
+    background-image: linear-gradient(to right, red, yellow, green);
+    /*设置渐变的角度 从左下到右上,30度，红黄绿*/
+    background-image: linear-gradient(30deg, red, yellow, green);
+    /*设置每个渐变的宽度，红50， 黄100， 绿150*/
+    background-image: linear-gradient(red 50px, yellow 100px, green 150px);
+    /*文字渐变
+    background-image: linear-gradient(red 50px, yellow 100px, green 150px);
+    -webkit-background-clip: text;
+    color: transparent; 设置成透明的*/
+}
+```
+* 径向（中心）渐变 radial-gradient
+```css
+div {
+    height: 400px;
+    weight: 400px;
+    border: 1px solid black;
+
+    /*中心渐变 红黄绿*/
+    background-image: radial-gradient(red, yellow, green);
+    /*设置渐变的圆心方向为： 右上角，红黄绿*/
+    background-image: radial-gradient(at right top, red, yellow, green);
+    /*设置渐变的圆心定位为100px 50px 从左下到右上,30度，红黄绿*/
+    background-image: radial-gradient(at 100px 50px, red, yellow, green);
+    /*设置为正圆渐变，红黄绿*/
+    background-image: radial-gradient(circle, red, yellow, green);
+    /*设置圆的半径，可以影响椭圆或者正圆，以及渐变范围*/
+    background-image: radial-gradient(100px 50px, red,yellow, green);
+    /*设置每个花色的半径*/
+    background-image: radial-gradient(100px 100px, red 50px,yellow 50px, green 50px);
+    /*这是圆心位置加渲染范围*/
+    background-image: radial-gradient(100px 100px at 50px 100px , red 50px,yellow 50px, green 50px);
+
+}
+```
+* 重复渐变 针对的是调整了每个花色的区域，如果达到了区域就会轮循。
+```css
+div {
+    /*这是圆心位置加渲染范围*/
+    background-image: repeating-radial-gradient(100px 100px at 50px 100px , red 50px,yellow 50px, green 50px);
+}
+
+```
 
 ### 字体
 
