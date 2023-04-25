@@ -90,6 +90,7 @@ div {
 ```
 
 * 设置多背景图；尝尝应用于四个角的图片
+
 ```css
 div {
     width: 400px;
@@ -103,7 +104,9 @@ div {
 ```
 
 ### CSS3-边框属性
+
 * border-radius 边框圆角
+
 ```css
 div {
     width: 400px;
@@ -114,14 +117,14 @@ div {
     border-radius: 200px 100px;
     /*左上角是个椭圆 x : 200px, y: 100px*/
     border-top-left-radius: 200px 100px;
-    
+
     /*复合属性： 顺时针*/
     /*border-radius: 左上，右上，右下，左下;*/
 }
 ```
 
-* outline-width 边框外框
-不参与计算盒子大小，在margin外面的一个框，不占位
+* outline-width 边框外框 不参与计算盒子大小，在margin外面的一个框，不占位
+
 ```css
 div {
     width: 400px;
@@ -131,7 +134,7 @@ div {
     font-size: 40px;
     margin: 0 auto;
     margin-top: 100px;
-    
+
     /*外框宽度*/
     outline-width: 20px;
     /*外框颜色*/
@@ -144,7 +147,110 @@ div {
     /*  复合属性 跨度，实线，颜色。 不支持偏移offset */
     outline: 20px solid orange;
 }
-
-
-
 ```
+
+### font文字属性
+
+* 文本阴影 text-shadow
+
+```css
+h1 {
+    font-size: 80px;
+    text-align: center;
+    /*默认，没有阴影*/
+    text-shadow: none;
+
+    /*偏右边水平的影子3px，偏下的垂直影子3px 阴影颜色红色*/
+    text-shadow: 3px 3px red;
+
+    /*偏右边水平的影子3px，偏下的垂直影子3px 模糊5px 阴影颜色红色*/
+    text-shadow: 3px 3px 5px red;
+}
+```
+
+* 文本换行 white-space
+
+```css
+div {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    font-size: 20px;
+
+    /*默认值：文本超出边界会自动换行，编码中的换行会被识别为空格*/
+    white-space: normal;
+    /*根据编码的空格进行空格，根据换行而换行。即：按照编码显示, 容器超出也会超出*/
+    white-space: pre;
+    /*根据编码的空格进行空格，根据换行而换行。即：按照编码显示, 容器超出会换行*/
+    white-space: pre-wrap;
+    /*编码格式中的，文字的前后的空格会忽略，根据换行而换行。即：按照编码显示, 容器超出会换行*/
+    white-space: pre-line;
+    /*并成一行，不换行，会超出容器~*/
+    white-space: nowrap;
+}
+```
+
+* 文本溢出 text-overflow 文本溢出往往和文本换行配合使用
+
+```css
+li {
+    margin-bottom: 40px;
+    /*不换行*/
+    white-space: nowrap;
+
+
+    /*截掉*/
+    text-overflow: clip;
+    /*超出部分变成了三个点~*/
+    text-overflow: ellipsis;
+    /*进行配合*/
+    overflow: hidden /overflow/ auto;
+}
+```
+
+* 文本修饰 text-decoration
+
+```css
+h1 {
+    font-size: 100px;
+    /*线位置 none默认值无，underline下划线，overline上划线，line-though贯穿线*/
+    text-decoration-line: overline;
+    /*线类型solid实线 double双线 dotted点状 dashed虚线 wavy波浪*/
+    text-decoration-style: dashed;
+    /*线颜色*/
+    text-decoration-color: red;
+
+    /*复合属性*/
+    text-decoration: overline wavy blue;
+}
+```
+
+* 文本描边 text-stroke-color  
+  此属性是测试属性
+
+```css
+h1 {
+    font-size: 20px;
+    /*描边宽度*/
+    -webkit-text-stroke-width: 5px;
+    /*描边颜色*/
+    -webkit-text-stroke-color: red;
+
+    /*  复合写法*/
+    -webkit-text-stroke: 5px red;
+}
+```
+
+### 渐变
+
+### 字体
+
+### 2D
+
+### 3D
+
+### 过度
+
+### 动画
+
+### 多列布局
