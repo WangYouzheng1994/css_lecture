@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outter {
+            width: 1200px;
+            height: 800px;
+            border: 1px solid black;
+            background-color: gray;
+            /*水平居中*/
+            margin: 0 auto;
+            /*弹性容器*/
+            display: flex;
+            flex-wrap: wrap;
+
+            /*侧轴对齐：起点对齐*/
+            align-items: flex-start;
+            /*侧轴对齐：终点对齐*/
+            /*align-items: flex-end;*/
+            /*侧轴对齐：中间对齐*/
+            /*align-items: center;*/
+            /*侧轴对齐：基线对齐，跟着字体大小决定的。。用的很少*/
+            /*align-items: baseline;*/
+            /*垂直填充满整个父容器，要求子元素不能设定height*/
+            /*align-items: stretch;*/
+        }
+
+        .inner {
+            width: 200px;
+            /*height: 100px; strctch 不可以有高度*/
+            background-color: green;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="outter">
+    <div class="inner">1</div>
+    <div class="inner">2</div>
+    <div class="inner">3</div>
+    <div class="inner">4</div>
+    <div class="inner">5</div>
+    <div class="inner">6</div>
+
+</div>
+</body>
+</html>

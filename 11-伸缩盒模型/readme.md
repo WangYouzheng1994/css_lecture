@@ -53,7 +53,7 @@ div.outer {
 ```
 
 4. 主轴上元素的对齐方式 justify-content
-
+主轴的对齐，是能挤挤就挤挤
 ```css
 .outter2 {
     /*主轴对齐方式*/
@@ -73,8 +73,8 @@ div.outer {
 }
 ```
 
-5. 侧轴
-* 单行情况
+5. 侧轴对齐
+* 单行情况 align-items
 ```css
 .outter {
     width: 1200px;
@@ -107,3 +107,5 @@ div.outer {
     box-sizing: border-box;
 }
 ```
+
+* 多行情况 align-content
