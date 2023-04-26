@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        .outter {
+            width: 800px;
+            height: 600px;
+            background-color: blue;
+            border: 1px solid black;
+            display: flex;
+            /*默认值，如果主轴撑不下了，就压缩孩子*/
+            /*flex-wrap: nowrap;*/
+            /*主轴放不下了 就往交叉轴换行*/
+            /*flex-wrap: wrap;*/
+            /*变换主轴的排列方向，默认都是 从左到右，从上到下，一单翻转那么 左到右变成右到左*/
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        .outter1 {
+            flex-wrap: wrap-reverse;
+        }
+        .outter2 {
+            /*主轴对齐方式*/
+            /*主轴开始的位置开始对齐，默认值 */
+            /*justify-content: flex-start;*/
+            /*主轴结束的位置开始对齐 */
+            /*justify-content: flex-end;*/
+            /*主轴居中*/
+            /*justify-content: center;*/
+            /*主轴对齐：项目均匀分布，两边一倍，项目中间两倍的比例，如果没有位置了就不分割了~*/
+            justify-content: space-around;
+            /*主轴对齐：项目两边紧贴开始和结束，中间等比分割空格*/
+            justify-content: space-between;
+            /*主轴对齐：项目均匀分布在一行中，铺不满的时候，均匀用空格分割，所以会居中*/
+            justify-content: space-evenly;
+
+        }
+
+        .inner {
+            width: 200px;
+            height: 50px;
+            background-color: red;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="outter outter1">
+    <div class="inner">1</div>
+    <div class="inner">2</div>
+    <div class="inner">3</div>
+    <div class="inner">4</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+    <div class="inner">5</div>
+</div>
+
+<div class="outter outter2">
+    <div class="inner">1</div>
+    <div class="inner">2</div>
+    <div class="inner">3</div>
+</div>
+</body>
+</html>
