@@ -183,7 +183,7 @@ div.outer {
 }
 ```
 
-### 伸缩盒模型的伸
+### 7. 伸缩盒模型的伸
 
 * flex-grow 定义子项的放大比例，默认是0：主轴即使存在剩余空间，也不拉伸。
 * 当所有伸缩项目的flex-grow都是1，那么他们成比例等分扩大，一起占用剩余空间
@@ -213,7 +213,7 @@ div.outer {
 }
 ```
 
-### 伸缩盒模型的缩
+### 8. 伸缩盒模型的缩
 * 当父元素的空间不够了，才会触发压缩。
 * flex-shrink默认值是1，flex-shrink调整的是缩放的比例。
 * flex-shrink的计算公式为：
@@ -231,4 +231,43 @@ flex-shrink缩放比例为 1, 2, 1
 200px(父容器欠缺的宽度) * 比例值1
 200px(父容器欠缺的宽度) * 比例值2
 200px(父容器欠缺的宽度) * 比例值3
+```
+```css
+.outter {
+    width: 350px;
+    height: 800px;
+    border: 1px solid black;
+    background-color: gray;
+    /*水平居中*/
+    margin: 0 auto;
+    display: flex;
+    /*主轴方向从右到左*/
+    flex-direction: row;
+    /*主轴排满了就换行*/
+    /*flex-wrap: wrap;*/
+}
+
+.items {
+    /*默认值就是1*/
+    flex-shrink: 1;
+    /*flex-grow: 1;*/
+    width: 200px;
+    height: 100px; /*strctch 不可以有高度*/
+    background-color: green;
+    border: 1px solid black;
+}
+```
+
+9. flex的复合属性
+
+
+10. flew的内容排序
+* 设置子元素的order。默认是0，数越小越靠近主轴起点
+* 设置子元素的align-items，默认是auto，根据父容器的来。
+
+```css
+.child {
+    order: 1;
+    align-items: end;
+}
 ```
