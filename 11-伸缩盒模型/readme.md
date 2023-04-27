@@ -52,8 +52,8 @@ div.outer {
 }
 ```
 
-4. 主轴上元素的对齐方式 justify-content
-主轴的对齐，是能挤挤就挤挤
+4. 主轴上元素的对齐方式 justify-content 主轴的对齐，是能挤挤就挤挤
+
 ```css
 .outter2 {
     /*主轴对齐方式*/
@@ -74,7 +74,10 @@ div.outer {
 ```
 
 5. 侧轴对齐
+
 * 单行情况 align-items
+* 而且align-items会影响到每行的孩子的排列，粒度更细
+
 ```css
 .outter {
     width: 1200px;
@@ -109,3 +112,52 @@ div.outer {
 ```
 
 * 多行情况 align-content
+
+- 当容器不设置高度，没设置wrap的时候，且子项只有一行的时候是不生效的
+- align-content只影响到行，不影响孩子的排列方式
+
+```css
+.outter {
+    width: 1200px;
+    height: 800px;
+    border: 1px solid black;
+    background-color: gray;
+    /*水平居中*/
+    margin: 0 auto;
+    /*弹性容器*/
+    display: flex;
+    flex-wrap: wrap;
+
+    /*align-items: center;*/
+    /*align-items: flex-end;*/
+
+    /*侧轴对齐多行：侧轴的起始位置对齐*/
+    /*align-content: flex-start;*/
+    /*侧轴对齐多行：侧轴的重点位置对齐*/
+    /*align-content: flex-end;*/
+    /*侧轴对齐多行：垂直居中*/
+    /*align-content: center;*/
+    /*侧轴对齐多行：两端有空格，元素垂直之间的空格是两端的两倍*/
+    /*align-content: space-around;*/
+    /*侧轴对齐多行：元素中间距离相等，两端没有空格*/
+    /*align-content: space-between;*/
+    /*侧轴对齐多行：元素中间，以及两端的空格距离是一样的*/
+    align-content: space-evenly;
+    /*侧轴对齐多行，拉伸，三行会平分整个父容器的高度，因此，孩子容器不可以设置高度*/
+    align-content: stretch;
+
+}
+
+.inner {
+    width: 200px;
+    height: 100px; /*strctch 不可以有高度*/
+    background-color: green;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+```
+
+* align-content和align-items总结：
+
+1. align-items的粒度比align-content更细，他会设置到一行中的孩子的垂直对齐方式，也会影响每行之间的对齐方式
+2. align-content指挥影响到每行之间的对齐方式 

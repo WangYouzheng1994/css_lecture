@@ -15,21 +15,29 @@
             display: flex;
             flex-wrap: wrap;
 
-            /*侧轴对齐：起点对齐*/
-            align-items: flex-start;
-            /*侧轴对齐：终点对齐*/
-            /*align-items: flex-end;*/
-            /*侧轴对齐：中间对齐*/
             /*align-items: center;*/
-            /*侧轴对齐：基线对齐，跟着字体大小决定的。。用的很少*/
-            /*align-items: baseline;*/
-            /*垂直填充满整个父容器，要求子元素不能设定height*/
-            /*align-items: stretch;*/
+            /*align-items: flex-end;*/
+
+            /*侧轴对齐多行：侧轴的起始位置对齐*/
+            /*align-content: flex-start;*/
+            /*侧轴对齐多行：侧轴的重点位置对齐*/
+            /*align-content: flex-end;*/
+            /*侧轴对齐多行：垂直居中*/
+            /*align-content: center;*/
+            /*侧轴对齐多行：两端有空格，元素垂直之间的空格是两端的两倍*/
+            /*align-content: space-around;*/
+            /*侧轴对齐多行：元素中间距离相等，两端没有空格*/
+            /*align-content: space-between;*/
+            /*侧轴对齐多行：元素中间，以及两端的空格距离是一样的*/
+            align-content: space-evenly;
+            /*侧轴对齐多行，拉伸，三行会平分整个父容器的高度，因此，孩子容器不可以设置高度*/
+            align-content: stretch;
+
         }
 
         .inner {
             width: 200px;
-            /*height: 100px; strctch 不可以有高度*/
+            height: 100px; /*strctch 不可以有高度*/
             background-color: green;
             border: 1px solid black;
             box-sizing: border-box;
@@ -44,9 +52,19 @@
     <div class="inner">2</div>
     <div class="inner">3</div>
     <div class="inner">4</div>
+    <div style="height: 150px" class="inner">5</div>
+    <div class="inner">6</div>
+    <div class="inner">4</div>
     <div class="inner">5</div>
     <div class="inner">6</div>
 
+    <div class="inner">4</div>
+    <div class="inner">5</div>
+    <div class="inner">6</div><div class="inner">4</div>
+    <div class="inner">5</div>
+    <div class="inner">6</div><div class="inner">4</div>
+    <div class="inner">5</div>
+    <div class="inner">6</div>
 </div>
 </body>
 </html>
