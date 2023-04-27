@@ -4,7 +4,9 @@
 
 * 当父节点设置了`display: flex`，直接孩子节点也会变成弹性盒子
 * 两个兄弟 父伸缩容器的排列方式还是上下，毕竟还是div
+
 ---
+
 2. 主轴
 
 * 主轴默认是从左到右，侧轴是垂直于主轴的，并且如果要改侧轴一定是只能改主轴
@@ -25,7 +27,9 @@ div.outer {
 ```
 
 * 直接孩子元素是按照主轴的方向进行排列的
+
 ---
+
 3. 主轴换行方式 flex-wrap
 
 ```css
@@ -51,7 +55,9 @@ div.outer {
 
 }
 ```
+
 ---
+
 4. 主轴上元素的对齐方式 justify-content 主轴的对齐，是能挤挤就挤挤
 
 ```css
@@ -72,7 +78,9 @@ div.outer {
     justify-content: space-evenly;
 }
 ```
+
 ---
+
 5. 侧轴对齐
 
 * 单行情况 align-items
@@ -161,8 +169,11 @@ div.outer {
 
 1. align-items的粒度比align-content更细，他会设置到一行中的孩子的垂直对齐方式，也会影响每行之间的对齐方式
 2. align-content指挥影响到每行之间的对齐方式
+
 ---
+
 6. flex-baxis 主轴方向的基准长度
+
 ```css
 .child {
     /*默认值：浏览器是根据此属性值计算主轴的剩余空间的，如果是auto，根据主轴方向来决定获取parent的width还是height*/
@@ -170,4 +181,54 @@ div.outer {
     /*主轴如果是横向的，那么，就是指的宽度500px，否则是高度500px*/
     flex-basis: 500px;
 }
+```
+
+### 伸缩盒模型的伸
+
+* flex-grow 定义子项的放大比例，默认是0：主轴即使存在剩余空间，也不拉伸。
+* 当所有伸缩项目的flex-grow都是1，那么他们成比例等分扩大，一起占用剩余空间
+* 当伸缩项目的flex-grow的值不相同，就按照对应的占比分配。
+
+```css
+.outter {
+    width: 1200px;
+    height: 800px;
+    border: 1px solid black;
+    background-color: gray;
+    /*水平居中*/
+    margin: 0 auto;
+    display: flex;
+    /*主轴方向从右到左*/
+    flex-direction: row;
+    /*主轴排满了就换行*/
+    flex-wrap: wrap;
+}
+
+.items {
+    flex-grow: 1;
+    width: 200px;
+    height: 100px; /*strctch 不可以有高度*/
+    background-color: green;
+    border: 1px solid black;
+}
+```
+
+### 伸缩盒模型的缩
+* 当父元素的空间不够了，才会触发压缩。
+* flex-shrink默认值是1，flex-shrink调整的是缩放的比例。
+* flex-shrink的计算公式为：
+```
+容器总宽度从400px收缩到200px
+三个容器宽度为100, 200, 100
+flex-shrink缩放比例为 1, 2, 1
+
+那么触发缩放以后，比例值的计算方式明细如下
+比例值1:100*1 / 1400
+比例值2:200*2 /1400
+比例值3:100*1 /1400
+
+实际的需要收缩的值为
+200px(父容器欠缺的宽度) * 比例值1
+200px(父容器欠缺的宽度) * 比例值2
+200px(父容器欠缺的宽度) * 比例值3
 ```
