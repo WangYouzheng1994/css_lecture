@@ -4,7 +4,7 @@
 
 * 当父节点设置了`display: flex`，直接孩子节点也会变成弹性盒子
 * 两个兄弟 父伸缩容器的排列方式还是上下，毕竟还是div
-
+---
 2. 主轴
 
 * 主轴默认是从左到右，侧轴是垂直于主轴的，并且如果要改侧轴一定是只能改主轴
@@ -25,7 +25,7 @@ div.outer {
 ```
 
 * 直接孩子元素是按照主轴的方向进行排列的
-
+---
 3. 主轴换行方式 flex-wrap
 
 ```css
@@ -51,7 +51,7 @@ div.outer {
 
 }
 ```
-
+---
 4. 主轴上元素的对齐方式 justify-content 主轴的对齐，是能挤挤就挤挤
 
 ```css
@@ -72,7 +72,7 @@ div.outer {
     justify-content: space-evenly;
 }
 ```
-
+---
 5. 侧轴对齐
 
 * 单行情况 align-items
@@ -160,4 +160,14 @@ div.outer {
 * align-content和align-items总结：
 
 1. align-items的粒度比align-content更细，他会设置到一行中的孩子的垂直对齐方式，也会影响每行之间的对齐方式
-2. align-content指挥影响到每行之间的对齐方式 
+2. align-content指挥影响到每行之间的对齐方式
+---
+6. flex-baxis 主轴方向的基准长度
+```css
+.child {
+    /*默认值：浏览器是根据此属性值计算主轴的剩余空间的，如果是auto，根据主轴方向来决定获取parent的width还是height*/
+    flex-basis: auto;
+    /*主轴如果是横向的，那么，就是指的宽度500px，否则是高度500px*/
+    flex-basis: 500px;
+}
+```
